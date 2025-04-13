@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Calendar, ExternalLink, Github } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { GlowingEffect } from "@/components/ui/glowing-effect"
 
 // Animation variants
 const containerVariants = {
@@ -39,8 +40,15 @@ interface ProjectProps {
 function ProjectCard({ project }: { project: ProjectProps }) {
   return (
     <motion.div variants={itemVariants}>
-      <Card className="h-full overflow-hidden border-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg group">
-        <CardHeader className="bg-accent/5">
+      <Card className="h-full overflow-hidden backdrop-blur-md border border-primary/10 hover:border-primary/20 transition-all duration-300 group relative">
+        <GlowingEffect
+          spread={50}
+          glow={true}
+          disabled={false}
+          proximity={100}
+          inactiveZone={0.01}
+        />
+        <CardHeader className="bg-primary/5 backdrop-blur-sm relative z-10">
           <div className="flex justify-between items-start">
             <CardTitle className="text-xl">{project.title}</CardTitle>
             <div className="flex items-center gap-1">
@@ -50,18 +58,18 @@ function ProjectCard({ project }: { project: ProjectProps }) {
           </div>
           <div className="flex flex-wrap gap-2 mt-2">
             {project.techStack.map((tech) => (
-              <Badge key={tech} variant="outline" className="bg-background/50">{tech}</Badge>
+              <Badge key={tech} variant="outline" className="bg-background/70 backdrop-blur-md border-primary/10">{tech}</Badge>
             ))}
           </div>
         </CardHeader>
-        <CardContent className="pt-4">
+        <CardContent className="pt-4 relative z-10">
           <CardDescription className="text-foreground/80">
             {project.description}
           </CardDescription>
         </CardContent>
-        <CardFooter className="flex justify-between gap-3 pt-2">
+        <CardFooter className="flex justify-between gap-3 pt-2 relative z-10">
           {project.githubLink && (
-            <Button variant="outline" size="sm" asChild className="w-full group-hover:border-primary/50">
+            <Button variant="outline" size="sm" asChild className="w-full backdrop-blur-sm border-primary/10 hover:border-primary/30 hover:bg-primary/5">
               <Link href={project.githubLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                 <Github size={16} />
                 <span>Code</span>
@@ -69,7 +77,7 @@ function ProjectCard({ project }: { project: ProjectProps }) {
             </Button>
           )}
           {project.liveLink && (
-            <Button variant="default" size="sm" asChild className="w-full">
+            <Button variant="default" size="sm" asChild className="w-full bg-primary/80 backdrop-blur-sm hover:bg-primary/90">
               <Link href={project.liveLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                 <ExternalLink size={16} />
                 <span>Live Demo</span>
@@ -113,14 +121,14 @@ export function ProjectsSection() {
   ]
 
   return (
-    <section id="projects" className="py-20 bg-muted/50">
+    <section id="projects" className="py-20 relative">
       <div className="container mx-auto px-4">
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-16 relative"
         >
           <Badge variant="outline" className="mb-2">
             Projects

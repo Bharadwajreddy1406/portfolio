@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import ClickSpark from "@/components/ui/ClickSpark";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,7 +35,15 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange={false}
         >
-          {children}
+          <ClickSpark
+            sparkColor="rgba(149, 99, 255, 0.7)"
+            sparkSize={3}
+            sparkRadius={40}
+            sparkCount={6}
+            duration={500}
+          >
+            {children}
+          </ClickSpark>
         </ThemeProvider>
       </body>
     </html>

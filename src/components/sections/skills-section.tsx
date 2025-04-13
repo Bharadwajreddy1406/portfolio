@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Code2, Terminal, Wrench } from "lucide-react"
+import { GlowingEffect } from "@/components/ui/glowing-effect"
 
 // Animation variants
 const containerVariants = {
@@ -33,7 +34,14 @@ interface SkillItemProps {
 function SkillItem({ name }: SkillItemProps) {
   return (
     <motion.div variants={itemVariants}>
-      <div className="bg-card rounded-lg p-3 border border-border hover:border-primary/50 hover:shadow-md transition-all">
+      <div className="relative bg-card rounded-lg p-3 border border-border hover:border-primary/50 transition-all h-full">
+        <GlowingEffect
+          spread={20}
+          glow={true}
+          disabled={false}
+          proximity={32}
+          inactiveZone={0.01}
+        />
         <span>{name}</span>
       </div>
     </motion.div>
@@ -56,8 +64,8 @@ export function SkillsSection() {
   ]
 
   return (
-    <section id="skills" className="py-20">
-      <div className="container mx-auto px-4">
+    <section id="skills" className="py-20 relative">
+      <div className="container mx-auto px-4 relative">
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -88,7 +96,14 @@ export function SkillsSection() {
             </div>
             
             <TabsContent value="languages">
-              <Card>
+              <Card className="relative overflow-hidden border-slate-800">
+                <GlowingEffect
+                  spread={60}
+                  glow={true}
+                  disabled={false}
+                  proximity={100}
+                  inactiveZone={0.2}
+                />
                 <CardContent className="p-6">
                   <motion.div 
                     className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3"
@@ -106,7 +121,14 @@ export function SkillsSection() {
             </TabsContent>
             
             <TabsContent value="technologies">
-              <Card>
+              <Card className="relative overflow-hidden border-slate-800">
+                <GlowingEffect
+                  spread={60}
+                  glow={true}
+                  disabled={false}
+                  proximity={100}
+                  inactiveZone={0.2}
+                />
                 <CardContent className="p-6">
                   <motion.div 
                     className="grid grid-cols-2 sm:grid-cols-3 gap-3"
@@ -124,7 +146,14 @@ export function SkillsSection() {
             </TabsContent>
             
             <TabsContent value="tools">
-              <Card>
+              <Card className="relative overflow-hidden border-slate-800">
+                <GlowingEffect
+                  spread={60}
+                  glow={true}
+                  disabled={false}
+                  proximity={100}
+                  inactiveZone={0.2}
+                />
                 <CardContent className="p-6">
                   <motion.div 
                     className="grid grid-cols-1 sm:grid-cols-3 gap-3"

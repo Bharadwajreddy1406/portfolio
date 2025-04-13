@@ -63,73 +63,153 @@
   }
 }
 
+/* Masculine Professional Tech Theme - Light Mode */
 :root {
   --radius: 0.625rem;
-  --background: #FFFFFF;
-  --foreground: #1F2937;
-  --card: #FFFFFF;
-  --card-foreground: #1F2937;
-  --popover: #FFFFFF;
-  --popover-foreground: #1F2937;
-  --primary: #4F46E5;
-  --primary-foreground: #FFFFFF;
-  --secondary: #f3f4f6;
-  --secondary-foreground: #1F2937;
-  --muted: #f3f4f6;
-  --muted-foreground: #6b7280;
-  --accent: #10B981;
-  --accent-foreground: #FFFFFF;
-  --destructive: #ef4444;
-  --border: #e5e7eb;
-  --input: #e5e7eb;
-  --ring: #4F46E5;
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: #FFFFFF;
-  --sidebar-foreground: #1F2937;
-  --sidebar-primary: #4F46E5;
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #10B981;
-  --sidebar-accent-foreground: #FFFFFF;
-  --sidebar-border: #e5e7eb;
-  --sidebar-ring: #4F46E5;
+  
+  /* Light Mode Palette */
+  --background: oklch(98% 0.005 270);        /* Clean white with a cool-neutral hint */
+  --foreground: oklch(20% 0.01 270);         /* Almost black with clean contrast */
+  
+  --card: oklch(94% 0.01 260);               /* Soft frosty surface (glassmorphism base) */
+  --card-foreground: oklch(20% 0.01 270);    /* Almost black text */
+  
+  --popover: oklch(96% 0.01 260);            /* Slightly transparent card */
+  --popover-foreground: oklch(20% 0.01 270); /* Almost black text */
+  
+  --primary: oklch(60% 0.2 250);             /* Bold electric blue (techy highlight color) */
+  --primary-foreground: oklch(98% 0.005 270); /* Clean white */
+  
+  --secondary: oklch(70% 0.14 130);          /* Sleek cyber green */
+  --secondary-foreground: oklch(98% 0.005 270); /* Clean white */
+  
+  --muted: oklch(92% 0.005 260);             /* Very light background */
+  --muted-foreground: oklch(40% 0.01 270);   /* Subtle text */
+  
+  --accent: oklch(85% 0.12 50);              /* Burnt amber */
+  --accent-foreground: oklch(20% 0.01 270);  /* Almost black */
+  
+  --destructive: oklch(65% 0.18 30);         /* Warning red */
+  
+  --border: oklch(85% 0.01 270);             /* Subtle border */
+  --input: oklch(90% 0.01 270);              /* Light input background */
+  --ring: oklch(60% 0.2 250);                /* Primary color for focus */
+  
+  /* Chart colors - tech variant */
+  --chart-1: oklch(60% 0.2 250);             /* Primary blue */
+  --chart-2: oklch(70% 0.14 130);            /* Secondary green */
+  --chart-3: oklch(85% 0.12 50);             /* Accent amber */
+  --chart-4: oklch(70% 0.15 310);            /* Tech purple */
+  --chart-5: oklch(65% 0.15 190);            /* Teal */
+  
+  /* Sidebar */
+  --sidebar: oklch(94% 0.01 260);            /* Same as card */
+  --sidebar-foreground: oklch(20% 0.01 270); /* Same as foreground */
+  --sidebar-primary: oklch(60% 0.2 250);     /* Same as primary */
+  --sidebar-primary-foreground: oklch(98% 0.005 270); /* Same as background */
+  --sidebar-accent: oklch(85% 0.12 50);      /* Same as accent */
+  --sidebar-accent-foreground: oklch(20% 0.01 270); /* Same as foreground */
+  --sidebar-border: oklch(85% 0.01 270);     /* Same as border */
+  --sidebar-ring: oklch(60% 0.2 250);        /* Same as primary */
 }
 
+/* Masculine Professional Tech Theme - Dark Mode */
 .dark {
-  --background: #111827;
-  --foreground: #F9FAFB;
-  --card: #1F2937;
-  --card-foreground: #F9FAFB;
-  --popover: #1F2937;
-  --popover-foreground: #F9FAFB;
-  --primary: #818CF8;
-  --primary-foreground: #111827;
-  --secondary: #374151;
-  --secondary-foreground: #F9FAFB;
-  --muted: #374151;
-  --muted-foreground: #9CA3AF;
-  --accent: #6EE7B7;
-  --accent-foreground: #111827;
-  --destructive: #ef4444;
-  --border: rgba(255, 255, 255, 0.1);
-  --input: rgba(255, 255, 255, 0.15);
-  --ring: #818CF8;
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: #1F2937;
-  --sidebar-foreground: #F9FAFB;
-  --sidebar-primary: #818CF8;
-  --sidebar-primary-foreground: #111827;
-  --sidebar-accent: #6EE7B7;
-  --sidebar-accent-foreground: #111827;
-  --sidebar-border: rgba(255, 255, 255, 0.1);
-  --sidebar-ring: #818CF8;
+  /* Dark Mode Palette */
+  --background: oklch(12% 0.005 270);        /* Dark slate/obsidian with cool undertone */
+  --foreground: oklch(96% 0.01 270);         /* Near white text with slight cool tint */
+  
+  --card: oklch(20% 0.01 260);               /* Slightly lifted for containers/cards */
+  --card-foreground: oklch(96% 0.01 270);    /* Near white text */
+  
+  --popover: oklch(18% 0.01 260);            /* Slightly transparent card */
+  --popover-foreground: oklch(96% 0.01 270); /* Near white text */
+  
+  --primary: oklch(75% 0.21 250);            /* Brightened tech-blue */
+  --primary-foreground: oklch(12% 0.005 270); /* Dark background */
+  
+  --secondary: oklch(80% 0.14 130);          /* Slightly vivid cyber green */
+  --secondary-foreground: oklch(12% 0.005 270); /* Dark background */
+  
+  --muted: oklch(16% 0.005 270);             /* Subtle background */
+  --muted-foreground: oklch(75% 0.01 270);   /* Light muted text */
+  
+  --accent: oklch(78% 0.1 50);               /* Amber highlight */
+  --accent-foreground: oklch(12% 0.005 270); /* Dark background */
+  
+  --destructive: oklch(70% 0.18 30);         /* Bright warning red */
+  
+  --border: oklch(30% 0.01 270);             /* Subtle border */
+  --input: oklch(25% 0.01 270);              /* Input background */
+  --ring: oklch(75% 0.21 250);               /* Primary for focus */
+  
+  /* Chart colors - vibrant dark mode variant */
+  --chart-1: oklch(75% 0.21 250);            /* Primary blue */
+  --chart-2: oklch(80% 0.14 130);            /* Secondary green */
+  --chart-3: oklch(78% 0.1 50);              /* Amber */
+  --chart-4: oklch(75% 0.15 310);            /* Tech purple */
+  --chart-5: oklch(70% 0.15 190);            /* Teal */
+  
+  /* Sidebar */
+  --sidebar: oklch(20% 0.01 260);            /* Same as card */
+  --sidebar-foreground: oklch(96% 0.01 270); /* Same as foreground */
+  --sidebar-primary: oklch(75% 0.21 250);    /* Same as primary */
+  --sidebar-primary-foreground: oklch(12% 0.005 270); /* Same as background */
+  --sidebar-accent: oklch(78% 0.1 50);       /* Same as accent */
+  --sidebar-accent-foreground: oklch(12% 0.005 270); /* Same as background */
+  --sidebar-border: oklch(30% 0.01 270);     /* Same as border */
+  --sidebar-ring: oklch(75% 0.21 250);       /* Same as primary */
+}
+
+/* Tech gradient overlay to background in dark mode */
+body.dark {
+  background: linear-gradient(135deg, oklch(12% 0.005 270) 0%, oklch(14% 0.01 250) 100%);
+}
+
+/* Add subtle noise texture to dark mode for tech vibe */
+body.dark::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  z-index: -1;
+}
+
+/* Add tech-focused glassmorphism effect to cards in light mode */
+.card:not(.dark *) {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+}
+
+/* Add modern tech-style glassmorphism to cards in dark mode */
+.dark .card {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+/* Add subtle tech grid pattern to background */
+body.dark::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: 
+    linear-gradient(to right, oklch(20% 0.01 260, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(20% 0.01 260, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: -1;
 }
 
 @layer base {

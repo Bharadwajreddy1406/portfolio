@@ -43,7 +43,7 @@ export function Header() {
           className="flex items-center"
         >
           <Link href="#home" className="text-xl md:text-2xl font-bold text-primary">
-            Bharadwaj Reddy
+            Bharadwaj Reddy<span className=" font-bold text-white ml-0.5">!</span>
           </Link>
         </motion.div>
 

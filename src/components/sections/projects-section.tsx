@@ -7,6 +7,7 @@ import { Calendar, ExternalLink, Github } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { GlowingEffect } from "@/components/ui/glowing-effect"
+import ScrollFloat from "@/components/ui/ScrollFloat"
 
 // Animation variants
 const containerVariants = {
@@ -130,10 +131,16 @@ export function ProjectsSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16 relative"
         >
-          <Badge variant="outline" className="mb-2">
+          {/* <Badge variant="outline" className="mb-2">
             Projects
-          </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold">My Recent Work</h2>
+          </Badge> */}
+          <ScrollFloat
+            containerClassName="text-center"
+            textClassName="font-bold"
+            scrollStart="center bottom+=60%"
+          >
+            My Recent Work
+          </ScrollFloat>
         </motion.div>
 
         <motion.div 

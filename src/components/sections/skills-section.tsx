@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Code2, Terminal, Wrench } from "lucide-react"
 import { GlowingEffect } from "@/components/ui/glowing-effect"
+import ScrollFloat from "@/components/ui/ScrollFloat"
 
 // Animation variants
 const containerVariants = {
@@ -73,10 +74,16 @@ export function SkillsSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <Badge variant="outline" className="mb-2">
+          {/* <Badge variant="outline" className="mb-2">
             Skills
-          </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold">Technical Expertise</h2>
+          </Badge> */}
+          <ScrollFloat
+            containerClassName="text-center"
+            textClassName="font-bold"
+            scrollStart="center bottom+=60%"
+          >
+            Technical Expertise
+          </ScrollFloat>
         </motion.div>
 
         <div className="max-w-4xl mx-auto">

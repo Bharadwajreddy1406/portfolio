@@ -36,11 +36,12 @@ export default function RootLayout({
           disableTransitionOnChange={false}
         >
           <ClickSpark
-            sparkColor="rgba(149, 99, 255, 0.7)"
-            sparkSize={3}
-            sparkRadius={40}
-            sparkCount={6}
-            duration={500}
+            // sparkColor="rgba(149, 99, 255, 0.7)"
+            sparkSize={10}
+            sparkRadius={15}
+            sparkCount={8}
+            duration={400}
+            extraScale={1.0}
           >
             {children}
           </ClickSpark>

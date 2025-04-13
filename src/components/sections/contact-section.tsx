@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { MapPin, Phone, Mail, Send, CheckCircle, AlertCircle } from "lucide-react"
 import { useForm } from "react-hook-form"
+import ScrollFloat from "@/components/ui/ScrollFloat"
 
 interface ContactFormData {
   name: string;
@@ -44,10 +45,16 @@ export function ContactSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <Badge variant="outline" className="mb-2">
+          {/* <Badge variant="outline" className="mb-2">
             Contact
-          </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold">Get in Touch</h2>
+          </Badge> */}
+          <ScrollFloat
+            containerClassName="text-center"
+            textClassName="font-bold"
+            scrollStart="center bottom+=60%"
+          >
+            Get in Touch
+          </ScrollFloat>
           <p className="text-muted-foreground mt-4 max-w-lg mx-auto">
             Feel free to reach out to me for collaborations, opportunities, or just to say hello!
           </p>

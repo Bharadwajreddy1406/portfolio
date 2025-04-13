@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Award, Star } from "lucide-react"
+import ScrollFloat from "@/components/ui/ScrollFloat"
 
 // Animation variants
 const containerVariants = {
@@ -83,10 +84,16 @@ export function AchievementsSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <Badge variant="outline" className="mb-2">
+          {/* <Badge variant="outline" className="mb-2">
             Achievements
-          </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold">Awards & Recognitions</h2>
+          </Badge> */}
+          <ScrollFloat
+            containerClassName="text-center"
+            textClassName="font-bold"
+            scrollStart="center bottom+=60%"
+          >
+            Awards & Recognitions
+          </ScrollFloat>
         </motion.div>
 
         <motion.div 
@@ -96,6 +103,7 @@ export function AchievementsSection() {
           whileInView="visible"
           viewport={{ once: true }}
         >
+ 
           {achievements.map((achievement) => (
             <AchievementCard key={achievement.title} achievement={achievement} />
           ))}

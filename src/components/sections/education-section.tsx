@@ -4,6 +4,8 @@ import { motion } from "framer-motion"
 import { GraduationCap, Calendar, MapPin } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
+import ShinyText from "@/components/ui/ShinyText"
+import ScrollFloat from "@/components/ui/ScrollFloat"
 
 export function EducationSection() {
   return (
@@ -16,10 +18,16 @@ export function EducationSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <Badge variant="outline" className="mb-2">
+          {/* <Badge variant="outline" className="mb-2">
             Education
-          </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold">My Academic Journey</h2>
+          </Badge> */}
+          <ScrollFloat
+            containerClassName="text-center"
+            textClassName="font-bold"
+            scrollStart="center bottom+=60%"
+          >
+            My Academic Journey
+          </ScrollFloat>
         </motion.div>
         
         <motion.div
@@ -62,13 +70,25 @@ export function EducationSection() {
                 
                 <div className="pt-4">
                   <h4 className="font-medium mb-2">Key Coursework:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary">Data Structures & Algorithms</Badge>
-                    <Badge variant="secondary">Operating Systems</Badge>
-                    <Badge variant="secondary">DBMS</Badge>
-                    <Badge variant="secondary">Functional Programming</Badge>
-                    <Badge variant="secondary">OOPS Concepts</Badge>
-                    <Badge variant="secondary">AI & ML</Badge>
+                  <div className="flex flex-wrap gap-3">
+                    <div className="border    rounded-xl px-3 py-1">
+                      <ShinyText text="Data Structures & Algorithms" speed={7} />
+                    </div>
+                    <div className="border    rounded-xl px-3 py-1">
+                      <ShinyText text="Operating Systems" speed={7} />
+                    </div>
+                    <div className="border    rounded-xl px-3 py-1">
+                      <ShinyText text="DBMS" speed={7} />
+                    </div>
+                    <div className="border    rounded-xl px-3 py-1">
+                      <ShinyText text="Functional Programming" speed={7} />
+                    </div>
+                    <div className="border    rounded-xl px-3 py-1">
+                      <ShinyText text="OOPS Concepts" speed={7} />
+                    </div>
+                    <div className="border    rounded-xl px-3 py-1">
+                      <ShinyText text="AI & ML" speed={7} />
+                    </div>
                   </div>
                 </div>
               </div>

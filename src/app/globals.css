@@ -63,107 +63,107 @@
   }
 }
 
-/* Masculine Professional Tech Theme - Light Mode */
+/* NeoTitan Modern Tech Theme - Light Mode */
 :root {
   --radius: 0.625rem;
   
   /* Light Mode Palette */
-  --background: oklch(98% 0.005 270);        /* Clean white with a cool-neutral hint */
-  --foreground: oklch(20% 0.01 270);         /* Almost black with clean contrast */
+  --background: oklch(98% 0.005 260);        /* Frosty base with subtle steel-blue hue */
+  --foreground: oklch(18% 0.01 260);         /* Steel black for strong readability */
   
-  --card: oklch(94% 0.01 260);               /* Soft frosty surface (glassmorphism base) */
-  --card-foreground: oklch(20% 0.01 270);    /* Almost black text */
+  --card: oklch(93% 0.015 250);              /* Cool card surface for glass effect */
+  --card-foreground: oklch(18% 0.01 260);    /* Steel black text */
   
-  --popover: oklch(96% 0.01 260);            /* Slightly transparent card */
-  --popover-foreground: oklch(20% 0.01 270); /* Almost black text */
+  --popover: oklch(95% 0.01 255);            /* Slightly transparent card */
+  --popover-foreground: oklch(18% 0.01 260); /* Steel black text */
   
-  --primary: oklch(60% 0.2 250);             /* Bold electric blue (techy highlight color) */
-  --primary-foreground: oklch(98% 0.005 270); /* Clean white */
+  --primary: oklch(58% 0.24 230);            /* Electric cyan — standout color */
+  --primary-foreground: oklch(98% 0.005 260); /* Frosty white */
   
-  --secondary: oklch(70% 0.14 130);          /* Sleek cyber green */
-  --secondary-foreground: oklch(98% 0.005 270); /* Clean white */
+  --secondary: oklch(65% 0.15 90);           /* Modern olive-gold — elite feel */
+  --secondary-foreground: oklch(98% 0.005 260); /* Frosty white */
   
-  --muted: oklch(92% 0.005 260);             /* Very light background */
-  --muted-foreground: oklch(40% 0.01 270);   /* Subtle text */
+  --muted: oklch(92% 0.01 255);              /* Subtle background */
+  --muted-foreground: oklch(35% 0.02 260);   /* Subtle text */
   
-  --accent: oklch(85% 0.12 50);              /* Burnt amber */
-  --accent-foreground: oklch(20% 0.01 270);  /* Almost black */
+  --accent: oklch(40% 0.12 20);              /* Warm carbon brown */
+  --accent-foreground: oklch(98% 0.005 260); /* Frosty white */
   
   --destructive: oklch(65% 0.18 30);         /* Warning red */
   
-  --border: oklch(85% 0.01 270);             /* Subtle border */
-  --input: oklch(90% 0.01 270);              /* Light input background */
-  --ring: oklch(60% 0.2 250);                /* Primary color for focus */
+  --border: oklch(85% 0.01 255);             /* Subtle border */
+  --input: oklch(92% 0.01 255);              /* Light input background */
+  --ring: oklch(58% 0.24 230);               /* Primary color for focus */
   
-  /* Chart colors - tech variant */
-  --chart-1: oklch(60% 0.2 250);             /* Primary blue */
-  --chart-2: oklch(70% 0.14 130);            /* Secondary green */
-  --chart-3: oklch(85% 0.12 50);             /* Accent amber */
-  --chart-4: oklch(70% 0.15 310);            /* Tech purple */
-  --chart-5: oklch(65% 0.15 190);            /* Teal */
+  /* Chart colors - NeoTitan variant */
+  --chart-1: oklch(58% 0.24 230);            /* Electric cyan */
+  --chart-2: oklch(65% 0.15 90);             /* Modern olive-gold */
+  --chart-3: oklch(40% 0.12 20);             /* Warm carbon brown */
+  --chart-4: oklch(55% 0.15 200);            /* Steel blue */
+  --chart-5: oklch(60% 0.12 290);            /* Cool purple */
   
   /* Sidebar */
-  --sidebar: oklch(94% 0.01 260);            /* Same as card */
-  --sidebar-foreground: oklch(20% 0.01 270); /* Same as foreground */
-  --sidebar-primary: oklch(60% 0.2 250);     /* Same as primary */
-  --sidebar-primary-foreground: oklch(98% 0.005 270); /* Same as background */
-  --sidebar-accent: oklch(85% 0.12 50);      /* Same as accent */
-  --sidebar-accent-foreground: oklch(20% 0.01 270); /* Same as foreground */
-  --sidebar-border: oklch(85% 0.01 270);     /* Same as border */
-  --sidebar-ring: oklch(60% 0.2 250);        /* Same as primary */
+  --sidebar: oklch(93% 0.015 250);           /* Same as card */
+  --sidebar-foreground: oklch(18% 0.01 260); /* Same as foreground */
+  --sidebar-primary: oklch(58% 0.24 230);    /* Same as primary */
+  --sidebar-primary-foreground: oklch(98% 0.005 260); /* Same as background */
+  --sidebar-accent: oklch(40% 0.12 20);      /* Same as accent */
+  --sidebar-accent-foreground: oklch(98% 0.005 260); /* Frosty white */
+  --sidebar-border: oklch(85% 0.01 255);     /* Same as border */
+  --sidebar-ring: oklch(58% 0.24 230);       /* Same as primary */
 }
 
-/* Masculine Professional Tech Theme - Dark Mode */
+/* NeoTitan Modern Tech Theme - Dark Mode */
 .dark {
   /* Dark Mode Palette */
-  --background: oklch(12% 0.005 270);        /* Dark slate/obsidian with cool undertone */
-  --foreground: oklch(96% 0.01 270);         /* Near white text with slight cool tint */
+  --background: oklch(14% 0.005 260);        /* Deep obsidian with modern depth */
+  --foreground: oklch(96% 0.01 260);         /* Almost-white text — crisp & modern */
   
-  --card: oklch(20% 0.01 260);               /* Slightly lifted for containers/cards */
-  --card-foreground: oklch(96% 0.01 270);    /* Near white text */
+  --card: oklch(22% 0.01 250);               /* Slightly lifted surface for cards */
+  --card-foreground: oklch(96% 0.01 260);    /* Almost-white text */
   
-  --popover: oklch(18% 0.01 260);            /* Slightly transparent card */
-  --popover-foreground: oklch(96% 0.01 270); /* Near white text */
+  --popover: oklch(20% 0.01 255);            /* Slightly transparent card */
+  --popover-foreground: oklch(96% 0.01 260); /* Almost-white text */
   
-  --primary: oklch(75% 0.21 250);            /* Brightened tech-blue */
-  --primary-foreground: oklch(12% 0.005 270); /* Dark background */
+  --primary: oklch(75% 0.25 230);            /* Neon cyan that glows in dark */
+  --primary-foreground: oklch(14% 0.005 260); /* Dark background */
   
-  --secondary: oklch(80% 0.14 130);          /* Slightly vivid cyber green */
-  --secondary-foreground: oklch(12% 0.005 270); /* Dark background */
+  --secondary: oklch(80% 0.14 90);           /* Gold-green for modern contrast */
+  --secondary-foreground: oklch(14% 0.005 260); /* Dark background */
   
-  --muted: oklch(16% 0.005 270);             /* Subtle background */
-  --muted-foreground: oklch(75% 0.01 270);   /* Light muted text */
+  --muted: oklch(18% 0.005 260);             /* Subtle background */
+  --muted-foreground: oklch(75% 0.01 260);   /* Light muted text */
   
-  --accent: oklch(78% 0.1 50);               /* Amber highlight */
-  --accent-foreground: oklch(12% 0.005 270); /* Dark background */
+  --accent: oklch(70% 0.1 20);               /* Burnt bronze — designer punch */
+  --accent-foreground: oklch(14% 0.005 260); /* Dark background */
   
   --destructive: oklch(70% 0.18 30);         /* Bright warning red */
   
-  --border: oklch(30% 0.01 270);             /* Subtle border */
-  --input: oklch(25% 0.01 270);              /* Input background */
-  --ring: oklch(75% 0.21 250);               /* Primary for focus */
+  --border: oklch(30% 0.01 260);             /* Subtle border */
+  --input: oklch(26% 0.01 260);              /* Input background */
+  --ring: oklch(75% 0.25 230);               /* Primary for focus */
   
-  /* Chart colors - vibrant dark mode variant */
-  --chart-1: oklch(75% 0.21 250);            /* Primary blue */
-  --chart-2: oklch(80% 0.14 130);            /* Secondary green */
-  --chart-3: oklch(78% 0.1 50);              /* Amber */
-  --chart-4: oklch(75% 0.15 310);            /* Tech purple */
-  --chart-5: oklch(70% 0.15 190);            /* Teal */
+  /* Chart colors - NeoTitan dark mode variant */
+  --chart-1: oklch(75% 0.25 230);            /* Neon cyan */
+  --chart-2: oklch(80% 0.14 90);             /* Gold-green */
+  --chart-3: oklch(70% 0.1 20);              /* Burnt bronze */
+  --chart-4: oklch(70% 0.15 200);            /* Electric blue */
+  --chart-5: oklch(65% 0.15 290);            /* Vibrant purple */
   
   /* Sidebar */
-  --sidebar: oklch(20% 0.01 260);            /* Same as card */
-  --sidebar-foreground: oklch(96% 0.01 270); /* Same as foreground */
-  --sidebar-primary: oklch(75% 0.21 250);    /* Same as primary */
-  --sidebar-primary-foreground: oklch(12% 0.005 270); /* Same as background */
-  --sidebar-accent: oklch(78% 0.1 50);       /* Same as accent */
-  --sidebar-accent-foreground: oklch(12% 0.005 270); /* Same as background */
-  --sidebar-border: oklch(30% 0.01 270);     /* Same as border */
-  --sidebar-ring: oklch(75% 0.21 250);       /* Same as primary */
+  --sidebar: oklch(22% 0.01 250);            /* Same as card */
+  --sidebar-foreground: oklch(96% 0.01 260); /* Same as foreground */
+  --sidebar-primary: oklch(75% 0.25 230);    /* Same as primary */
+  --sidebar-primary-foreground: oklch(14% 0.005 260); /* Same as background */
+  --sidebar-accent: oklch(70% 0.1 20);       /* Same as accent */
+  --sidebar-accent-foreground: oklch(14% 0.005 260); /* Same as background */
+  --sidebar-border: oklch(30% 0.01 260);     /* Same as border */
+  --sidebar-ring: oklch(75% 0.25 230);       /* Same as primary */
 }
 
 /* Tech gradient overlay to background in dark mode */
 body.dark {
-  background: linear-gradient(135deg, oklch(12% 0.005 270) 0%, oklch(14% 0.01 250) 100%);
+  background: linear-gradient(135deg, oklch(14% 0.005 260) 0%, oklch(18% 0.01 245) 100%);
 }
 
 /* Add subtle noise texture to dark mode for tech vibe */
@@ -206,10 +206,23 @@ body.dark::after {
   height: 100%;
   pointer-events: none;
   background-image: 
-    linear-gradient(to right, oklch(20% 0.01 260, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(20% 0.01 260, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, oklch(25% 0.01 250, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(25% 0.01 250, 0.03) 1px, transparent 1px);
   background-size: 40px 40px;
   z-index: -1;
+}
+
+/* Add glow effect to primary color elements in dark mode */
+.dark .text-primary, 
+.dark .border-primary, 
+.dark .bg-primary {
+  filter: drop-shadow(0 0 5px oklch(75% 0.25 230 / 0.3));
+}
+
+/* Add subtle cyan glow to buttons in dark mode */
+.dark .btn-primary, 
+.dark .btn-glow {
+  box-shadow: 0 0 15px -2px oklch(75% 0.25 230 / 0.4);
 }
 
 @layer base {

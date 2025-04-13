@@ -3,12 +3,23 @@
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { User } from "lucide-react"
+import ScrollFloat from "@/components/ui/ScrollFloat"
+import Threads from "@/components/ui/Threads"
+import Image from "next/image"
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-20">
-      <div className="container mx-auto px-4">
+    <section id="about" className="py-20 relative overflow-hidden">
+      <div className="absolute inset-0 opacity-150">
+        <Threads 
+          color={[0.4, 0.6, 1]} 
+          amplitude={0.8} 
+          distance={0.3} 
+          enableMouseInteraction={true} 
+        />
+      </div>
+      
+      <div className="container mx-auto px-4  relative z-10">
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -16,35 +27,40 @@ export function AboutSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <Badge variant="outline" className="mb-2">
+          {/* <Badge variant="outline" className="mb-2">
             About Me
-          </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold">Get to know me</h2>
+          </Badge> */}
+          <ScrollFloat
+            containerClassName="text-center"
+            textClassName="font-bold"
+            scrollStart="center bottom+=60%"
+          >
+            Get to know me
+          </ScrollFloat>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <motion.div 
-            className="md:col-span-1 flex flex-col items-center justify-center"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="w-48 h-48 md:w-60 md:h-60 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-              <User size={80} className="text-primary" />
-            </div>
-          </motion.div>
-
-          <motion.div 
-            className="md:col-span-2"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <Card className="bg-card/50 backdrop-blur-sm">
-              <CardContent className="p-6 md:p-8">
-                <div className="space-y-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <Card className="bg-transparent backdrop-blur-sm border border-white/20 shadow-lg rounded-2xl overflow-hidden">
+            <CardContent className="p-0 relative">
+              {/* <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 pointer-events-none rounded-2xl"></div> */}
+              <div className="flex flex-col md:flex-row relative">
+                <div className="md:w-1/3 p-6 flex items-center justify-center">
+                  <div className="relative w-48 h-48 md:w-80 md:h-80 overflow-hidden rounded-2xl border-2 border-white/20 shadow-lg">
+                    <Image 
+                      src="/image.jpg" 
+                      alt="Profile image" 
+                      fill 
+                      className="object-cover"
+                      priority
+                    />
+                  </div>
+                </div>
+                <div className="md:w-2/3 p-6 md:p-8 space-y-4">
                   <p className="text-lg">
                     I am a passionate software developer and AI enthusiast currently pursuing my Bachelor's in Computer Science at Keshav Memorial Institute of Technology, Hyderabad.
                   </p>
@@ -58,7 +74,7 @@ export function AboutSection() {
                     various programming languages and frameworks, I strive to create clean, efficient, and 
                     impactful software solutions.
                   </p>
-                  <div className="pt-4">
+                  <div className="pt-4 border-t border-white/10">
                     <h3 className="font-medium mb-2">Contact Information:</h3>
                     <ul className="space-y-1 text-muted-foreground">
                       <li>Location: Hyderabad, Telangana</li>
@@ -67,10 +83,10 @@ export function AboutSection() {
                     </ul>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
       </div>
     </section>
   )

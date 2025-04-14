@@ -71,22 +71,22 @@ export function EducationSection() {
                 <div className="pt-4">
                   <h4 className="font-medium mb-2">Key Coursework:</h4>
                   <div className="flex flex-wrap gap-3">
-                    <div className="border    rounded-xl px-3 py-1">
+                    <div className="border border-primary/20 dark:border-gray-700 rounded-xl px-3 py-1 bg-white/30 dark:bg-gray-900/30 shadow-sm">
                       <ShinyText text="Data Structures & Algorithms" speed={7} />
                     </div>
-                    <div className="border    rounded-xl px-3 py-1">
+                    <div className="border border-primary/20 dark:border-gray-700 rounded-xl px-3 py-1 bg-white/30 dark:bg-gray-900/30 shadow-sm">
                       <ShinyText text="Operating Systems" speed={7} />
                     </div>
-                    <div className="border    rounded-xl px-3 py-1">
+                    <div className="border border-primary/20 dark:border-gray-700 rounded-xl px-3 py-1 bg-white/30 dark:bg-gray-900/30 shadow-sm">
                       <ShinyText text="DBMS" speed={7} />
                     </div>
-                    <div className="border    rounded-xl px-3 py-1">
+                    <div className="border border-primary/20 dark:border-gray-700 rounded-xl px-3 py-1 bg-white/30 dark:bg-gray-900/30 shadow-sm">
                       <ShinyText text="Functional Programming" speed={7} />
                     </div>
-                    <div className="border    rounded-xl px-3 py-1">
+                    <div className="border border-primary/20 dark:border-gray-700 rounded-xl px-3 py-1 bg-white/30 dark:bg-gray-900/30 shadow-sm">
                       <ShinyText text="OOPS Concepts" speed={7} />
                     </div>
-                    <div className="border    rounded-xl px-3 py-1">
+                    <div className="border border-primary/20 dark:border-gray-700 rounded-xl px-3 py-1 bg-white/30 dark:bg-gray-900/30 shadow-sm">
                       <ShinyText text="AI & ML" speed={7} />
                     </div>
                   </div>

@@ -12,10 +12,7 @@ import SplitText from "./../ui/SplitText";
 
 export function HeroSection() {
   return (
-    <section
-      id="home"
-      className="min-h-screen flex flex-col justify-center pt-16 pb-10 relative overflow-hidden"
-    >
+    <section id="home" className="min-h-screen flex flex-col justify-center pt-16 pb-10 relative overflow-hidden">
       {/* Background animations */}
       <Noise
         patternSize={150}
@@ -70,7 +67,7 @@ export function HeroSection() {
               className="text-lg md:text-xl text-center md:text-left"
             >
               I'm a <ContainerTextFlip
-                words={["Full Stack Developer", "DevOps Engineer", "AI/ML Engineer","Kubernetes Practitioner"]}
+                words={["Full Stack Developer", "DevOps Engineer", "AI/ML Engineer","K8s Practitioner"]}
                 className="text-primary font-medium"
                 interval={2500}
               />
@@ -91,9 +88,30 @@ export function HeroSection() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="rounded-full shadow-md shadow-blue-500/40 hover:shadow-blue-400/70 hover:shadow-lg transition-all duration-300 ease-in-out text-white hover:text-slate-300"
+                  className="rounded-full shadow-md shadow-blue-500/40 hover:shadow-blue-400/70 hover:shadow-lg transition-all duration-300 ease-in-out text-slate-950 hover:text-slate-950 dark:text-white group overflow-hidden relative hover:bg-transparent dark:hover:bg-transparent"
                 >
-                  View my work
+                  <motion.span
+                    className="absolute inset-0 bg-gradient-to-r from-blue-100/20 to-blue-200/30 dark:from-blue-900/30 dark:to-blue-900/30 opacity-0 group-hover:opacity-10 transition-opacity duration-300"
+                    animate={{ scale: [1, 1.05, 1] }}
+                    transition={{
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      duration: 2,
+                      ease: "easeInOut"
+                    }}
+                  />
+                  <motion.span
+                    whileHover={{
+                      scale: 1.05
+                    }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 10
+                    }}
+                  >
+                    View my work
+                  </motion.span>
                 </Button>
               </Link>
             </motion.div>

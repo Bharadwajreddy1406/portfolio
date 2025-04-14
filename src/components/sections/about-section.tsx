@@ -6,6 +6,9 @@ import { Badge } from "@/components/ui/badge"
 import ScrollFloat from "@/components/ui/ScrollFloat"
 import Threads from "@/components/ui/Threads"
 import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { GlowingEffect } from "@/components/ui/glowing-effect"
+import { FileText } from "lucide-react"
 
 export function AboutSection() {
   return (
@@ -27,9 +30,6 @@ export function AboutSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          {/* <Badge variant="outline" className="mb-2">
-            About Me
-          </Badge> */}
           <ScrollFloat
             containerClassName="text-center"
             textClassName="font-bold"
@@ -47,7 +47,6 @@ export function AboutSection() {
         >
           <Card className="bg-transparent backdrop-blur-sm border border-white/20 shadow-lg rounded-2xl overflow-hidden">
             <CardContent className="p-0 relative">
-              {/* <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 pointer-events-none rounded-2xl"></div> */}
               <div className="flex flex-col md:flex-row relative">
                 <div className="md:w-1/3 p-6 flex items-center justify-center">
                   <div className="relative w-48 h-48 md:w-80 md:h-80 overflow-hidden rounded-2xl border-2 border-white/20 shadow-lg">
@@ -75,12 +74,40 @@ export function AboutSection() {
                     impactful software solutions.
                   </p>
                   <div className="pt-4 border-t border-white/10">
-                    <h3 className="font-medium mb-2">Contact Information:</h3>
-                    <ul className="space-y-1 text-muted-foreground">
-                      <li>Location: Hyderabad, Telangana</li>
-                      <li>Phone: +91 9390428814</li>
-                      <li>Email: bharadwajreddy1463@gmail.com</li>
-                    </ul>
+                    <div className="flex flex-col md:flex-row md:justify-between  lg:items-center md:items-start gap-4">
+                      <div>
+                        <h3 className="font-medium mb-2">Contact Information:</h3>
+                        <ul className="space-y-1 text-muted-foreground">
+                          <li>Location: Hyderabad, Telangana</li>
+                          <li>Phone: +91 9390428814</li>
+                          <li>Email: bharadwajreddy1463@gmail.com</li>
+                        </ul>
+                      </div>
+                      
+                      <div className="relative mt-4 md:mt-0">
+                        <div className="absolute inset-0 rounded-xl">
+                          <GlowingEffect
+                            disabled={false}
+                            blur={8}
+                            spread={60}
+                            movementDuration={1.5}
+                            proximity={100}
+                            inactiveZone={0.2}
+                            glow={true}
+                            variant="default"
+                            borderWidth={1.5}
+                          />
+                        </div>
+                        <Button 
+                          size="lg"
+                          className="relative bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl shadow-lg flex items-center gap-2 px-6"
+                          onClick={() => window.open('/resume.pdf', '_blank')}
+                        >
+                          <FileText size={18} />
+                          Open Resume
+                        </Button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -55,7 +55,7 @@ function ProjectCard({ project }: { project: ProjectProps }) {
       className="h-full w-full relative overflow-hidden rounded-3xl shadow-2xl"
     >
       {/* Glowing Effect positioned with higher z-index and made visible on borders */}
-      <div className="absolute inset-0 z-30 rounded-3xl">
+      <div className="absolute inset-0 z-30 rounded-3xl pointer-events-none">
         <GlowingEffect
           disabled={false}
           blur={10}
@@ -70,7 +70,7 @@ function ProjectCard({ project }: { project: ProjectProps }) {
       </div>
       
       {/* Border for extra highlight */}
-      <div className="absolute inset-0 rounded-3xl border border-primary/30 z-20"></div>
+      <div className="absolute inset-0 rounded-3xl border border-primary/30 z-20 pointer-events-none"></div>
 
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0 border">
@@ -85,7 +85,7 @@ function ProjectCard({ project }: { project: ProjectProps }) {
       </div>
       
       {/* Card Content */}
-      <div className="relative z-10 flex flex-col h-full">
+      <div className="relative z-40 flex flex-col h-full">
         <div className="p-6 bg-primary/30 backdrop-blur-sm border-b border-primary/10">
           <div className="flex justify-between items-start">
             <CardTitle className="text-2xl md:text-3xl font-bold text-foreground">{project.title}</CardTitle>

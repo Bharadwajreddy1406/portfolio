@@ -35,7 +35,7 @@ interface SkillItemProps {
 function SkillItem({ name }: SkillItemProps) {
   return (
     <motion.div variants={itemVariants}>
-      <div className="relative bg-card rounded-lg p-3 border border-border hover:border-primary/50 transition-all h-full">
+      <div className="relative bg-card rounded-lg p-3 border border-border  transition-all h-full">
         <GlowingEffect
           spread={20}
           glow={true}
@@ -61,7 +61,8 @@ export function SkillsSection() {
   ]
 
   const tools = [
-    "VS Code", "Android Studio", "IntelliJ Idea Ultimate"
+    "VS Code", "Android Studio", "IntelliJ Idea Ultimate", "PyCharm", "Figma", "Postman",
+    "Vercel"
   ]
 
   return (

@@ -90,8 +90,8 @@ function ProjectCard({ project }: { project: ProjectProps }) {
           <div className="flex justify-between items-start">
             <CardTitle className="text-2xl md:text-3xl font-bold text-foreground">{project.title}</CardTitle>
             <div className="flex items-center gap-1">
-              <Calendar size={14} className="text-muted-foreground" />
-              <span className="text-xs text-muted-foreground">{project.date}</span>
+              <Calendar size={14} className="text-muted-foreground dark:text-white" />
+              <span className="text-xs text-muted-foreground dark:text-white">{project.date}</span>
             </div>
           </div>
         </div>

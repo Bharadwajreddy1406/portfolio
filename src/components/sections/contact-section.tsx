@@ -10,6 +10,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { MapPin, Phone, Mail, Send, CheckCircle, AlertCircle } from "lucide-react"
 import { useForm } from "react-hook-form"
 import ScrollFloat from "@/components/ui/ScrollFloat"
+import { showLoading, showSuccess, showError } from "@/lib/toast"
 
 interface ContactFormData {
   name: string;
@@ -23,15 +24,29 @@ export function ContactSection() {
 
   const onSubmit = async (data: ContactFormData) => {
     setFormStatus('submitting')
+    const toastId = showLoading('Sending your message...')
+    
     try {
-      // In a real implementation, you'd send the data to your API endpoint
-      // For now, we'll just simulate a successful submission after a delay
-      await new Promise(resolve => setTimeout(resolve, 1000))
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      if (!response.ok) {
+        const errorData = await response.json()
+        throw new Error(errorData.error || 'Failed to send message')
+      }
+
       setFormStatus('success')
       reset()
+      showSuccess('Message sent successfully!', { id: toastId })
     } catch (error) {
       setFormStatus('error')
       console.error("Error submitting form:", error)
+      showError('Failed to send message. Please try again.', { id: toastId })
     }
   }
 
@@ -111,7 +126,7 @@ export function ContactSection() {
           {/* Contact Form */}
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             className="md:col-span-3"

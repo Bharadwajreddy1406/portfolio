@@ -6,6 +6,7 @@ interface NoiseProps {
   patternScaleY?: number;
   patternRefreshInterval?: number;
   patternAlpha?: number;
+  className?: string; // Added className prop
 }
 
 const Noise: React.FC<NoiseProps> = ({
@@ -14,6 +15,7 @@ const Noise: React.FC<NoiseProps> = ({
   patternScaleY = 1,
   patternRefreshInterval = 2,
   patternAlpha = 15,
+  className = "", // Default to empty string
 }) => {
   const grainRef = useRef<HTMLCanvasElement | null>(null);
 
@@ -81,7 +83,7 @@ const Noise: React.FC<NoiseProps> = ({
     };
   }, [patternSize, patternScaleX, patternScaleY, patternRefreshInterval, patternAlpha]);
 
-  return <canvas className="absolute left-0 top-0 w-screen h-screen" ref={grainRef} />;
+  return <canvas className={`absolute left-0 top-0 w-screen h-screen ${className}`} ref={grainRef} />;
 };
 
 export default Noise;

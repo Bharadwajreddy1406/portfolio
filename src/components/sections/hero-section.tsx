@@ -13,15 +13,17 @@ import SplitText from "./../ui/SplitText";
 export function HeroSection() {
   return (
     <section id="home" className="min-h-screen flex flex-col justify-center pt-16 pb-10 relative overflow-hidden">
-      {/* Background animations */}
+      {/* Noise Effect - Positioned with very high z-index to appear on top */}
       <Noise
-        patternSize={150}
+        patternSize={100}
         patternScaleX={1}
         patternScaleY={1}
         patternRefreshInterval={2}
         patternAlpha={10}
+        className="z-[1000] pointer-events-none fixed"
       />
-
+      
+      {/* Container and content */}
       <div className="container mx-auto px-4 relative">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="flex flex-col mt-20 items-center md:items-start space-y-8 md:space-y-10 md:max-w-[55%]">

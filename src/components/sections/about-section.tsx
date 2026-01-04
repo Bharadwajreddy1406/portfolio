@@ -78,9 +78,9 @@ export function AboutSection() {
                       <div>
                         <h3 className="font-medium mb-2">Contact Information:</h3>
                         <ul className="space-y-1 text-muted-foreground">
-                          <li>Location: Hyderabad, Telangana</li>
-                          <li>Phone: +91 9390428814</li>
-                          <li>Email: bharadwajreddy1463@gmail.com</li>
+                          <li>Location: <span className="text-white">Hyderabad, Telangana</span></li>
+                          <li>Email: <span className="text-ring">bharadwajreddy1463@gmail.com</span></li>
+                          <li>LinkedIn : <span className="text-primary underline"> <a href="https://www.linkedin.com/in/bharadwajreddy1406/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/bharadwajreddy1406/</a></span></li>
                         </ul>
                       </div>
                       

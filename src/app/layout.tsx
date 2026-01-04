@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import ClickSpark from "@/components/ui/ClickSpark";
 import { Toaster } from "react-hot-toast";
+import OnekoCat from "@/components/OnekoCat";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,18 +47,19 @@ export default function RootLayout({
           >
             {children}
           </ClickSpark>
-          <Toaster 
-            position="top-right" 
+          <Toaster
+            position="top-right"
             toastOptions={{
               style: {
-                background: 'var(--background)',
-                color: 'var(--foreground)',
-                border: '1px solid var(--border)',
+                background: "var(--background)",
+                color: "var(--foreground)",
+                border: "1px solid var(--border)",
               },
-              duration: 3000
+              duration: 3000,
             }}
           />
         </ThemeProvider>
+        <OnekoCat />
       </body>
     </html>
   );

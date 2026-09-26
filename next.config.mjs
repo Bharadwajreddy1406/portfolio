@@ -8,7 +8,8 @@ const baseConfig = {
 export default function nextConfig(phase) {
   return {
     ...baseConfig,
-    // Keep dev and production build artifacts isolated to avoid Windows rename races.
-    distDir: phase === PHASE_DEVELOPMENT_SERVER ? '.next-dev' : '.next-build',
+    // Keep the dev artifacts isolated on Windows while leaving production output
+    // in Next.js/Vercel's standard `.next` directory.
+    distDir: phase === PHASE_DEVELOPMENT_SERVER ? '.next-dev' : '.next',
   }
 }

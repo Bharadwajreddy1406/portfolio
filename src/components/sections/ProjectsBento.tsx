@@ -65,11 +65,11 @@ export default function ProjectsBento() {
 
   return (
     <section id="projects" ref={sectionRef} className="relative py-24 md:py-32">
-      <span className="section-index">05</span>
+      <span className="section-index">06</span>
       <div className="content-grid">
         <header className="col-span-6 mb-10 md:col-span-8">
           <p className="label-text">- Projects</p>
-          <h2 className="font-display text-[clamp(42px,6vw,74px)] font-extrabold tracking-[-0.03em]">Bento Case Studies</h2>
+          <h2 className="font-display text-[clamp(42px,6vw,74px)] font-extrabold tracking-[-0.03em]">My Projects</h2>
         </header>
 
         <div className="col-span-6 md:col-span-12 grid auto-rows-[minmax(300px,auto)] gap-4 md:grid-cols-12 md:gap-6">
@@ -80,7 +80,6 @@ export default function ProjectsBento() {
               onMouseMove={onMove}
               onMouseLeave={onLeave}
               className={`relative overflow-hidden bg-mutedsurface p-5 md:p-7 ${cardClasses(index)}`}
-              data-cursor="interactive"
               style={{ transformStyle: 'preserve-3d' }}
             >
               <div className="flex h-full flex-col">

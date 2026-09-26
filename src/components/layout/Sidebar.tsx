@@ -1,9 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import { useRef, useState } from 'react'
+import { useRef, useState, type MouseEvent } from 'react'
 import { useGSAP } from '@gsap/react'
-import { ScrollTrigger, gsap } from '@/lib/gsap'
+import { ScrollSmoother, ScrollTrigger, gsap } from '@/lib/gsap'
 import { sectionItems } from '@/data/portfolio'
 
 export default function Sidebar() {
@@ -33,6 +33,22 @@ export default function Sidebar() {
 
   const iconClass = 'h-[18px] w-[18px] stroke-current'
 
+  const handleNavigation = (event: MouseEvent<HTMLAnchorElement>, id: string) => {
+    event.preventDefault()
+    const target = document.getElementById(id)
+    if (!target) return
+
+    setActive(id)
+    window.history.replaceState(null, '', `#${id}`)
+
+    const smoother = ScrollSmoother.get()
+    if (smoother) {
+      smoother.scrollTo(target, true, 'top top')
+    } else {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
   return (
     <>
       <aside
@@ -46,7 +62,8 @@ export default function Sidebar() {
             <Link
               key={item.id}
               href={`#${item.id}`}
-              className="group relative block h-3 w-3 rounded-full border border-gold/70"
+              onClick={(event) => handleNavigation(event, item.id)}
+              className="group relative block h-3 w-3 rounded-full border border-gold/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
               data-cursor="interactive"
               aria-label={item.label}
             >
@@ -61,7 +78,8 @@ export default function Sidebar() {
           ))}
         </nav>
 
-        <div className="flex flex-col gap-3 text-ghost">
+        <div className="flex flex-col items-center gap-3 text-ghost">
+          <span className="mb-1 block h-12 w-px bg-gold/40" aria-hidden="true" />
           <a href="https://github.com/Bharadwajreddy1406" target="_blank" rel="noreferrer" data-cursor="interactive" aria-label="GitHub">
             {/* REPLACE: Minimal bespoke GitHub line icon with slightly irregular stroke */}
             <svg className={iconClass} viewBox="0 0 24 24" fill="none">
@@ -82,7 +100,8 @@ export default function Sidebar() {
           <Link
             key={item.id}
             href={`#${item.id}`}
-            className="flex h-8 w-8 items-center justify-center rounded-full"
+            onClick={(event) => handleNavigation(event, item.id)}
+            className="flex h-11 w-11 items-center justify-center rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
             style={{ border: `1px solid ${active === item.id ? '#C8A96E' : 'rgba(184,176,160,0.35)'}` }}
             data-cursor="interactive"
             aria-label={item.label}

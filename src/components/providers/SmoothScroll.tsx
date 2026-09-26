@@ -1,7 +1,7 @@
 'use client'
 
 import { PropsWithChildren, useEffect } from 'react'
-import { ScrollSmoother, gsap } from '@/lib/gsap'
+import { ScrollSmoother, ScrollTrigger, gsap } from '@/lib/gsap'
 
 export default function SmoothScroll({ children }: PropsWithChildren) {
   useEffect(() => {
@@ -15,8 +15,12 @@ export default function SmoothScroll({ children }: PropsWithChildren) {
         smooth: 1.2,
         effects: true,
       })
+      const refreshFrame = window.requestAnimationFrame(() => ScrollTrigger.refresh())
 
-      return () => smoother.kill()
+      return () => {
+        window.cancelAnimationFrame(refreshFrame)
+        smoother.kill()
+      }
     })
 
     return () => mm.revert()

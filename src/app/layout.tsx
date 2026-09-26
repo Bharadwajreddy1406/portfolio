@@ -5,7 +5,7 @@ import './globals.css'
 const manrope = Manrope({
   subsets: ['latin'],
   variable: '--font-manrope',
-  weight: ['300', '800'],
+  weight: ['300', '400', '800'],
 })
 
 const dmSans = DM_Sans({
@@ -21,8 +21,8 @@ const dmMono = DM_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Bharadwaj Reddy - Portfolio 2026',
-  description: 'Warm editorial portfolio for Bharadwaj Reddy, full-stack developer and AI builder.',
+  title: 'Bharadwaj Reddy | Software Engineer',
+  description: 'Portfolio of Bharadwaj Reddy, a backend engineer building data-intensive systems and production AI products.',
 }
 
 export default function RootLayout({

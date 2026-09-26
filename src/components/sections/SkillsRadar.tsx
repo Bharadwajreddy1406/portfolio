@@ -3,7 +3,7 @@
 import { useMemo, useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import { gsap } from '@/lib/gsap'
-import { radarAxes } from '@/data/portfolio'
+import { radarAxes, technicalSkillGroups } from '@/data/portfolio'
 
 const size = 380
 const center = size / 2
@@ -32,18 +32,27 @@ export default function SkillsRadar() {
     []
   )
 
+  const labelPoints = useMemo(
+    () => radarAxes.map((_, idx) => radialPoint(idx, radarAxes.length, 118)),
+    []
+  )
+
   useGSAP(() => {
     if (!polygonRef.current) return
 
-    const progress = { value: 0 }
+    const targetPoints = fullPoints.map((point) => `${point.x},${point.y}`).join(' ')
+    polygonRef.current.setAttribute('points', targetPoints)
+
+    const progress = { value: 1 }
     const mm = gsap.matchMedia()
 
     mm.add('(prefers-reduced-motion: no-preference)', () => {
       // Radar polygon interpolates from center to target skill values.
-      gsap.to(progress, {
+      gsap.fromTo(progress, { value: 0 }, {
         value: 1,
         duration: 1.3,
         ease: 'power3.out',
+        immediateRender: false,
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top 75%',
@@ -62,12 +71,13 @@ export default function SkillsRadar() {
       })
 
       // Category rows appear in sequence under the chart.
-      gsap.from(sectionRef.current?.querySelectorAll('[data-skill-line]') ?? [], {
-        opacity: 0,
-        y: 20,
+      gsap.fromTo(sectionRef.current?.querySelectorAll('[data-skill-line]') ?? [], { opacity: 0, y: 20 }, {
+        opacity: 1,
+        y: 0,
         stagger: 0.05,
         duration: 0.5,
         ease: 'power2.out',
+        immediateRender: false,
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top 80%',
@@ -81,10 +91,10 @@ export default function SkillsRadar() {
 
   return (
     <section id="skills" ref={sectionRef} className="relative overflow-hidden bg-ink py-24 text-parchment md:py-32">
-      <span className="section-index text-ghost">04</span>
+      <span className="section-index text-ghost">05</span>
       <div className="content-grid">
         <div className="col-span-6 mb-10 md:col-span-7">
-          <p className="label-text text-ghost">- Skills Architecture</p>
+          <p className="label-text text-ghost">- Skills</p>
           <h2 className="font-display text-[clamp(42px,6vw,72px)] font-extrabold leading-[0.95] tracking-[-0.03em] text-white">
             Capability Map
           </h2>
@@ -101,13 +111,13 @@ export default function SkillsRadar() {
               <g key={radarAxes[idx].label}>
                 <line x1={center} y1={center} x2={point.x} y2={point.y} stroke="rgba(255,255,255,0.2)" />
                 <text
-                  x={point.x}
-                  y={point.y}
+                  x={labelPoints[idx].x > center ? size - 8 : labelPoints[idx].x < center ? 8 : labelPoints[idx].x}
+                  y={labelPoints[idx].y}
                   fill="rgba(255,255,255,0.72)"
                   fontSize="12"
-                  textAnchor="middle"
+                  textAnchor={labelPoints[idx].x > center ? 'end' : labelPoints[idx].x < center ? 'start' : 'middle'}
                   className="font-mono"
-                  dy={point.y > center ? 18 : -8}
+                  dy={labelPoints[idx].y > center ? 14 : -8}
                 >
                   {radarAxes[idx].label}
                 </text>
@@ -118,19 +128,18 @@ export default function SkillsRadar() {
           </svg>
         </div>
 
-        <div className="col-span-6 mt-12 space-y-3 text-base text-white/90 md:col-span-10 md:col-start-2">
-          <p data-skill-line>
-            <span className="font-mono text-[12px] uppercase tracking-[0.12em] text-ghost">Languages - </span>
-            Python <span className="text-gold">·</span> Java <span className="text-gold">·</span> C++ <span className="text-gold">·</span> Dart <span className="text-gold">·</span> SQL
-          </p>
-          <p data-skill-line>
-            <span className="font-mono text-[12px] uppercase tracking-[0.12em] text-ghost">Frameworks - </span>
-            React <span className="text-gold">·</span> Next.js <span className="text-gold">·</span> FastAPI <span className="text-gold">·</span> Flask <span className="text-gold">·</span> PyTorch
-          </p>
-          <p data-skill-line>
-            <span className="font-mono text-[12px] uppercase tracking-[0.12em] text-ghost">Tools - </span>
-            Docker <span className="text-gold">·</span> Git <span className="text-gold">·</span> Hugging Face <span className="text-gold">·</span> Ollama <span className="text-gold">·</span> PostgreSQL
-          </p>
+        <div className="col-span-6 mt-12 space-y-5 text-base text-white/90 md:col-span-10 md:col-start-2">
+          {technicalSkillGroups.map((group) => (
+            <p key={group.label} data-skill-line className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
+              <span className="font-mono text-[12px] uppercase tracking-[0.12em] text-ghost">{group.label} - </span>
+              {group.skills.map((skill, index) => (
+                <span key={skill} className="inline-flex items-baseline gap-4">
+                  {index > 0 && <span className="text-gold">&middot;</span>}
+                  {skill}
+                </span>
+              ))}
+            </p>
+          ))}
         </div>
       </div>
     </section>

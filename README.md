@@ -46,3 +46,13 @@ npm run start
 ## Environment
 
 The contact API reads its email-service configuration from local environment variables. Environment files are intentionally ignored by Git.
+
+## Feature flags
+
+The opening hexagon preloader is disabled by default. Add the following to `.env.local` and restart the development server when you want it back:
+
+```env
+NEXT_PUBLIC_ENABLE_PRELOADER=true
+```
+
+Remove the variable or set it to `false` to open directly on the hero section.

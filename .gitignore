@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+.next-dev/
+.next-build/
+.next/
 # production
 /build
 

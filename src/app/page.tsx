@@ -1,29 +1,34 @@
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { HeroSection } from "@/components/sections/hero-section"
-import { AboutSection } from "@/components/sections/about-section"
-import { EducationSection } from "@/components/sections/education-section"
-import { ExperienceSection } from "@/components/sections/experience-section"
-import { SkillsSection } from "@/components/sections/skills-section"
-import { ProjectsSection } from "@/components/sections/projects-section"
-import { AchievementsSection } from "@/components/sections/achievements-section"
-import { BlogsSection } from "@/components/sections/blogs-section"
-import { ContactSection } from "@/components/sections/contact-section"
+import Cursor from '@/components/effects/Cursor'
+import Preloader from '@/components/effects/Preloader'
+import Footer from '@/components/layout/Footer'
+import Sidebar from '@/components/layout/Sidebar'
+import SmoothScroll from '@/components/providers/SmoothScroll'
+import About from '@/components/sections/About'
+import Achievements from '@/components/sections/Achievements'
+import Contact from '@/components/sections/Contact'
+import Internship from '@/components/sections/Internship'
+import Landing from '@/components/sections/Landing'
+import ProjectsBento from '@/components/sections/ProjectsBento'
+import SkillsRadar from '@/components/sections/SkillsRadar'
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="min-h-screen">
-      <Header />
-      <HeroSection />
-      <AboutSection />
-      <EducationSection />
-      <ExperienceSection />
-      <SkillsSection />
-      <ProjectsSection />
-      <AchievementsSection />
-      <BlogsSection />
-      <ContactSection />
-      <Footer />
-    </main>
-  );
+    <>
+      <Preloader />
+      <Cursor />
+      <Sidebar />
+      <SmoothScroll>
+        <main className="editorial-main">
+          <Landing />
+          <About />
+          <Internship />
+          <SkillsRadar />
+          <ProjectsBento />
+          <Achievements />
+          <Contact />
+          <Footer />
+        </main>
+      </SmoothScroll>
+    </>
+  )
 }

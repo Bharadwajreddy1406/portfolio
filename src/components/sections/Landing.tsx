@@ -144,12 +144,11 @@ export default function Landing({ preloaderEnabled = false }: LandingProps) {
             </span>
           </h1>
           <p ref={roleRef} className="mt-6 max-w-2xl text-[18px] text-ink/70 motion-safe:opacity-0">
-            Software Engineer (GET) at AltiusHub, building data-intensive backends and production AI systems.
-          </p>
+            Building traceability software, shipping product features, and designing the AI layer on top of the platform currently working at <b>AltiusHub</b>.</p>
         </div>
 
         <div ref={artRef} className="col-span-6 col-start-1 mt-10 flex justify-end motion-safe:opacity-0 md:col-span-4 md:col-start-9 md:mt-0">
-          <div className="relative h-[58vh] w-full max-w-[420px]">
+          <div className="relative h-[58vh] w-full max-w-[400px]">
             <Image 
               src="/hero-section.png" 
               alt="Editorial hero art" 

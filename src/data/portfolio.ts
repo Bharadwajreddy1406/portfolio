@@ -90,7 +90,7 @@ export const projects = [
     imageClassName: 'object-cover w-full h-full p-0 flex-1 rounded-sm'
   },
   {
-    name: 'Breast Cancer Detection',
+    name: 'Breast Cancer Detection & Segmentation',
     tag: 'Healthcare · Vision Transformer · Image Segmentation',
     date: '2024',
     description: 'Classifies BUSI ultrasound images with a Vision Transformer and segments tumor regions with UNetR, integrated into a MERN application for real-time evaluation.',
@@ -102,7 +102,7 @@ export const projects = [
     imageClassName: 'object-cover w-full h-full p-0 flex-1 rounded-sm'
   },
   {
-    name: 'Mock Interview System',
+    name: 'Skill Sage - A Mock Interviewing Platform',
     tag: 'AI · Voice-Based · Student Evaluation & Training Platform',
     date: '2025',
     description: 'Full-stack AI-powered interview platform used by 150+ students across multiple colleges, featuring resume-aware text and voice interviews, AI-generated questions, personalized performance evaluations and improvement plans, centralized multi-college admin management, real-time LG webOS monitoring, and a Dockerized architecture handling 200 requests per second, with a planned AWS EKS deployment.',
@@ -114,7 +114,7 @@ export const projects = [
     imageClassName: 'object-cover w-full h-full p-0 flex-1 rounded-sm'
   },
   {
-    name: 'LG webOS SkillSage',
+    name: 'LG webOS Dashboard system',
     tag: 'LG WebOS · Real-time · WebSockets',
     date: '2024',
     description: 'Central administration system requested by KMIT faculty for assigning and pushing content to multiple LG webOS TVs over WebSockets. Tested on a live LG TV cluster and with up to 40 concurrent device simulators.',
@@ -126,7 +126,7 @@ export const projects = [
     imageClassName: 'object-cover w-full h-full p-0 flex-1 rounded-sm'
   },
   {
-    name: 'Osmania Scraper',
+    name: 'Osmania Student Results Scraper',
     tag: 'Data Scraping · Automation · Multi-threading',
     date: '2024',
     description: 'Flask-powered data extraction and normalization pipeline for Osmania portals with resilient retry logic.',
@@ -150,7 +150,7 @@ export const projects = [
     imageClassName: 'object-cover w-full h-full p-0 flex-1 rounded-sm'
   },
   {
-    name: 'Manima Video Workspace',
+    name: 'Manim Video Workspace',
     tag: 'Developer tools · Video Generator · Manim',
     date: '2026',
     description: 'Structured workspace for mathematical and technical explainers, taking each video from narration script and storyboard to Manim scene, voiceover-synchronized animation, subtitles, and multi-resolution exports.',
@@ -203,7 +203,7 @@ export const projects = [
     date: '2024',
     description: 'Web tool to quickly generate raw.githubusercontent.com links by entering repository details.',
     tech: ['HTML', 'CSS', 'JavaScript'],
-    image: '/github-logo.png',
+    image: '/rawurl.png',
     fallback: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=400',
     large: false,
     githubUrl: 'https://github.com/Bharadwajreddy1406/Github-Raw_userContent_URL_maker',

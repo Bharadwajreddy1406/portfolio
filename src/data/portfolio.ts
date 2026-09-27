@@ -13,9 +13,9 @@ export const radarAxes = [
   { label: 'Python', value: 95 },
   { label: 'AI Agents', value: 94 },
   { label: 'AWS Agent Core', value: 93 },
-  { label: 'TypeScript', value: 76 },
-  { label: 'Go', value: 72 },
-  { label: 'Django', value: 74 },
+  { label: 'TypeScript', value: 80 },
+  { label: 'Go', value: 78 },
+  { label: 'Django', value: 85 },
   { label: 'PostgreSQL', value: 94 },
 ];
 

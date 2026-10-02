@@ -102,7 +102,7 @@ export default function SkillsRadar() {
 
         <div className="col-span-6 md:col-span-6 md:col-start-4">
           {/* REPLACE: Bespoke radar diagram with custom geometric axis styling and editorial grid marks */}
-          <svg viewBox={`0 0 ${size} ${size}`} className="mx-auto w-full max-w-[430px]">
+          <svg viewBox="-40 0 520 380" className="mx-auto w-full max-w-[520px]">
             <circle cx={center} cy={center} r={radius} fill="none" stroke="rgba(255,255,255,0.16)" />
             <circle cx={center} cy={center} r={radius * 0.66} fill="none" stroke="rgba(255,255,255,0.12)" />
             <circle cx={center} cy={center} r={radius * 0.33} fill="none" stroke="rgba(255,255,255,0.1)" />
@@ -111,11 +111,11 @@ export default function SkillsRadar() {
               <g key={radarAxes[idx].label}>
                 <line x1={center} y1={center} x2={point.x} y2={point.y} stroke="rgba(255,255,255,0.2)" />
                 <text
-                  x={labelPoints[idx].x > center ? size - 8 : labelPoints[idx].x < center ? 8 : labelPoints[idx].x}
+                  x={labelPoints[idx].x > center ? labelPoints[idx].x + 8 : labelPoints[idx].x < center ? labelPoints[idx].x - 8 : labelPoints[idx].x}
                   y={labelPoints[idx].y}
                   fill="rgba(255,255,255,0.72)"
-                  fontSize="12"
-                  textAnchor={labelPoints[idx].x > center ? 'end' : labelPoints[idx].x < center ? 'start' : 'middle'}
+                  fontSize="11"
+                  textAnchor={labelPoints[idx].x > center ? 'start' : labelPoints[idx].x < center ? 'end' : 'middle'}
                   className="font-mono"
                   dy={labelPoints[idx].y > center ? 14 : -8}
                 >

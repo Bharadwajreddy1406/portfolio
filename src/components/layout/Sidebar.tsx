@@ -3,8 +3,37 @@
 import Link from 'next/link'
 import { useRef, useState, type MouseEvent } from 'react'
 import { useGSAP } from '@gsap/react'
+import {
+  BriefcaseBusiness,
+  GraduationCap,
+  Home,
+  Sparkles,
+  UserRound,
+  type LucideIcon,
+} from 'lucide-react'
 import { ScrollSmoother, ScrollTrigger, gsap } from '@/lib/gsap'
 import { sectionItems } from '@/data/portfolio'
+
+const mobileNavIcons: Record<string, LucideIcon> = {
+  landing: Home,
+  about: UserRound,
+  education: GraduationCap,
+  internship: BriefcaseBusiness,
+  skills: Sparkles,
+}
+
+function MobileNavIcon({ id, isActive }: { id: string; isActive: boolean }) {
+  const Icon = mobileNavIcons[id]
+
+  return (
+    <Icon
+      aria-hidden="true"
+      className="h-[18px] w-[18px]"
+      color={isActive ? '#C8A96E' : '#B8B0A0'}
+      strokeWidth={1.6}
+    />
+  )
+}
 
 export default function Sidebar() {
   const navRef = useRef<HTMLElement>(null)
@@ -106,10 +135,7 @@ export default function Sidebar() {
             data-cursor="interactive"
             aria-label={item.label}
           >
-            {/* REPLACE: Handcrafted mobile glyph set with monoline icon language */}
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style={{ color: active === item.id ? '#C8A96E' : '#B8B0A0' }}>
-              <path d="M4 12h16M12 4v16" stroke="currentColor" strokeWidth="1.4" />
-            </svg>
+            <MobileNavIcon id={item.id} isActive={active === item.id} />
           </Link>
         ))}
       </nav>
